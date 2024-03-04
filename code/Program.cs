@@ -1,6 +1,6 @@
 ﻿string[] originalArray = new string[5] {"Уфа", "Омск", "Москва", "Шуя", "Гай"};
 string[] newArray = new string[originalArray.Length];
-void SecondArrayWithIF(string[] originalArray, string[] newArray)
+void SecondArray(string[] originalArray, string[] newArray)
 {
      int count = 0;
      for (int i = 0; i < originalArray.Length; i++) {
@@ -21,5 +21,5 @@ void PrintArray(string[] Array)
      Console.WriteLine ("]");
 }
 Console.WriteLine($"Новый массив:");
-SecondArrayWithIF(originalArray, newArray);
+SecondArray(originalArray, newArray);
 PrintArray(newArray);
