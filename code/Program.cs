@@ -1,39 +1,25 @@
-﻿
-    static string[] RecreateArray(string[] inputArray)
-    {
-        int count = 0;
-        for (int i = 0; i < inputArray.Length; i++)
-        {
-            if (inputArray[i].Length <= 3)
-            {
-                count++;
-            }
-        }
-
-
-        string[] outputArray = new string[count];
-
-        int index = 0;
-        for (int i = 0; i < inputArray.Length; i++)
-        {
-            if (inputArray[i].Length <= 3)
-            {
-                outputArray[index] = inputArray[i];
-                index++;
-            }
-        }
-
-        return outputArray;
-    }
-void arrayPrint(string[] array)
+﻿string[] originalArray = new string[5] {"Уфа", "Омск", "Москва", "Шуя", "Гай"};
+string[] newArray = new string[originalArray.Length];
+void SecondArrayWithIF(string[] originalArray, string[] newArray)
 {
-     System.Console.WriteLine("[" + string.Join(", ", array) + "]");
+     int count = 0;
+     for (int i = 0; i < originalArray.Length; i++) {
+     if(originalArray[i].Length <= 3)
+         {
+         newArray[count] = originalArray[i];
+         count++;
+         }
+     }
+ }
+void PrintArray(string[] Array)
+{
+    Console.Write ("[ ");
+    for (int i = 0; i < Array.Length; i++)
+    {
+        Console.Write($"{Array[i]} ");
+    }
+     Console.WriteLine ("]");
 }
-
-    Console.WriteLine("Введите элементы массива через запятую:");
-    string? input = Console.ReadLine();
-    string[] array = input.Split(',');
-    string[] result = RecreateArray(array);
-
-    Console.WriteLine($"Новый массив:");
-    arrayPrint(RecreateArray(array));
+Console.WriteLine($"Новый массив:");
+SecondArrayWithIF(originalArray, newArray);
+PrintArray(newArray);
